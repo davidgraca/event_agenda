@@ -8,6 +8,7 @@
 	import Content from "./Content.svelte";
 
 	let calendarRef, infoModal, showModal;
+	let targetAudienceFilter= [], tagFilter = [];
 	
 	function next() {
 		let calendarApi = calendarRef.getAPI();
@@ -45,10 +46,33 @@
 			showModal=true;
 		},
 	};
+
+	// Extract filters
+	fetch("./data-sample.json")
+				.then((response) => response.json())
+				.then((data) => {
+					console.log(data);
+					let uniqueDictTags = {};
+					data.forEach(session => session.tags.forEach(tag => uniqueDictTags[tag]=1));
+					tagFilter = Object.keys(uniqueDictTags);
+					
+					let uniqueDictTargetAudience = {};
+					data.forEach(session => session.target_audience.forEach(ta => uniqueDictTargetAudience[ta]=1));
+					targetAudienceFilter = Object.keys(uniqueDictTargetAudience);
+				})
+				.catch((err) => console.log(err));
 </script>
 
 <main class="container">
 	<h1>AXA Software Engineering Summit 2021!</h1>
+	<span>Tags</span>
+	{#each tagFilter as filter}
+		<input type="checkbox" id="{filter}" value="{filter}">
+	{/each}
+	<span>Target Audience</span>
+	{#each targetAudienceFilter as filter}
+		<input type="checkbox" id="{filter}" value="{filter}">
+	{/each}
 	<FullCalendar bind:this={calendarRef} {options} />
 	<Modal >
 		<Content bind:info={infoModal} {showModal}/>
