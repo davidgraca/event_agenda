@@ -50,7 +50,8 @@ export default {
 		css({ output: 'bundle.css' }),
 		// for FullCalendar
 		postcss({
-			extract: true,
+			//extract: true,
+			modules:true
 		}),
 		// If you have external dependencies installed from
 		// npm, you'll most likely need these plugins. In
