@@ -23,11 +23,11 @@ function download(){
 	let targetAudienceFilter = [],
 		tagFilter = [],
 		selectedTargetAudienceFilter = [],
-		selectedTagFilter = []		;
+		selectedTagFilter = [];
+	let calendarApi = function(){ return calendarRef.getAPI();}
 
-	function next() {
-		let calendarApi = calendarRef.getAPI();
-		calendarApi.next();
+	function next() {	
+		calendarApi()().next();
 	}
 	let options = {
 		initialView: "timeGridWeek",
@@ -59,6 +59,44 @@ function download(){
 			};
 			showModal = true;
 		},
+		headerToolbar: {
+      left: 'prev,next today filter unfilter',
+      center: 'title',
+      right: 'resourceTimelineDay,resourceTimeGridDay'
+    },
+    customButtons: {
+      filter: {
+        text: 'Apply filters',
+        click: function() {
+			calendarApi().batchRendering(function() {
+            let events = calendarApi().getEvents()
+            for (let i = 0; i < events.length; i++) {
+              let event = events[i]
+              if (selectedTagFilter.length != 0 && selectedTagFilter.find( el => event.extendedProps.tags.includes(el)) == undefined) {
+                event.setProp('display', 'none')
+              }
+			  if (selectedTargetAudienceFilter.length != 0 && selectedTargetAudienceFilter.find(el => event.extendedProps.target_audience.includes(el))== undefined) {
+                event.setProp('display', 'none')
+              }
+            }
+          })
+        }
+      },
+      unfilter: {
+        text: 'Remove filters',
+        click: function() {
+			calendarApi().batchRendering(function() {
+            let events = calendarApi().getEvents();
+            for (let i = 0; i < events.length; i++) {
+              let event = events[i];
+			  event.setProp('display', 'auto');
+            }
+			selectedTagFilter =[];
+			selectedTargetAudienceFilter = [];
+          })
+        }
+      } 
+    },
 	};
 
 	// Extract filters
