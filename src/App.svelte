@@ -1,5 +1,4 @@
 <script>
-	import { getContext } from "svelte";
 	import FullCalendar from "svelte-fullcalendar";
 	import dayGridPlugin from "@fullcalendar/daygrid";
 	import timeGridPlugin from "@fullcalendar/timegrid";
@@ -124,7 +123,28 @@ function download(){
 			console.log(selectedTargetAudienceFilter);
 			
 		}
-
+function handleChange() {
+	
+			calendarApi().batchRendering(function() {
+            let events = calendarApi().getEvents()
+			/* erase visibility */
+			for (let i = 0; i < events.length; i++) {
+              let event = events[i];
+			  event.setProp('display', 'auto');
+            }
+			/* hide the ones not matching */
+            for (let i = 0; i < events.length; i++) {
+              let event = events[i]
+              if (selectedTagFilter.length != 0 && selectedTagFilter.find( el => event.extendedProps.tags.includes(el)) == undefined) {
+                event.setProp('display', 'none')
+              }
+			  if (selectedTargetAudienceFilter.length != 0 && selectedTargetAudienceFilter.find(el => event.extendedProps.target_audience.includes(el))== undefined) {
+                event.setProp('display', 'none')
+              }
+            }
+          })
+        
+}
 </script>
 
 <main class="container">
@@ -133,12 +153,12 @@ function download(){
 	<span>Tags</span><br>
 	{#each tagFilter as filter}
 	<span>{filter}</span>
-		<input type="checkbox" id={filter} value={filter} bind:group={selectedTagFilter} /> 
+		<input type="checkbox" id={filter} value={filter} bind:group={selectedTagFilter} on:change={handleChange} /> 
 	{/each}
 	<br><span>Target Audience</span><br>
 	{#each targetAudienceFilter as filter}
 	<span>{filter}</span>
-		<input type="checkbox" id={filter} value={filter} bind:group={selectedTargetAudienceFilter}/>
+		<input type="checkbox" id={filter} value={filter} bind:group={selectedTargetAudienceFilter} on:change={handleChange}>
 	{/each}
 	<FullCalendar bind:this={calendarRef} {options} />
 	<Modal>
