@@ -1,19 +1,10 @@
 <script>
   export let allData;
-  let authors, date, start, end;
-
-  function authorsToString(obj) {
-    let _authors = [];
-    obj.forEach((author) => {
-      _authors.push(author.name + " from " + author.entity);
-    });
-
-    return _authors.join("\n");
-  }
+  let  date, start, end;
 
   $: {
     if (allData) {
-      authors = authorsToString(allData.other.authors);
+      
       date = allData.start.toLocaleDateString();
       start = allData.start.toLocaleTimeString();
       end = allData.end.toLocaleTimeString();
@@ -355,9 +346,8 @@
   <div class="row">
     <div class="col">
       <b>{date}</b>
-      <p>{authors}</p>
+      <p>{allData.other.authors}</p>
       <p>From {start} to {end}</p>
-      <p>Session type: {allData.other.session_type}</p>
     </div>
     <div class="col">
       <p>Target audience: {allData.other.target_audience.join(", ")}</p>
