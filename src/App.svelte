@@ -31,7 +31,7 @@
 		},
 		events: function (info, successCallback, failureCallback) {
 			console.log(info);
-			fetch("./data-sample.json")
+			fetch("./data.json")
 				.then((response) => response.json())
 				.then((data) => {
 					console.log(data);
@@ -52,7 +52,7 @@
 	};
 
 	// Extract filters
-	fetch("./data-sample.json")
+	fetch("./data.json")
 		.then((response) => response.json())
 		.then((data) => {
 			console.log(data);

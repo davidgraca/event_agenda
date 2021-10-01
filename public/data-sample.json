@@ -21,10 +21,7 @@
     "title": "2nd",
     "start": "2021-10-05T09:00:00",
     "end": "2021-10-05T10:00:00",
-    "target_audience": [
-      "devs",
-      "architects"
-    ],
+    
     "session_type": "talk",
     "authors": [
       {
@@ -32,7 +29,11 @@
         "entity": "axa partners"
       }
     ],
-    "tags":["cloud", "development"]
+    "tags":["cloud", "development"],
+    "target_audience": [
+      "devs",
+      "architects"
+    ]
   },
   {
     "title": "3rd",

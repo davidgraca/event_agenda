@@ -1,0 +1,822 @@
+[
+    {
+        "header_id": "4",
+        "start": "2021-10-04T09:00:00+01:00",
+        "end": "2021-10-04T10:00:00+01:00",
+        "title": "Engineering Summit'21",
+        "line2": "Opening",
+        "authors": "Roland Scharrer + Summit team",
+        "tags": [
+            "cloud",
+            "development"
+        ],
+        "target_audience": [
+            "devs",
+            "architects",
+            "managers"
+        ]
+    },
+    {
+        "header_id": "4",
+        "start": "2021-10-04T10:00:00+01:00",
+        "end": "2021-10-04T10:30:00+01:00",
+        "title": "Java on Azure",
+        "authors": "Rory Preddy / Microsoft",
+        "tags": [
+            "cloud",
+            "development"
+        ],
+        "target_audience": [
+            "devs"
+        ]
+    },
+    {
+        "header_id": "4",
+        "start": "2021-10-04T10:30:00+01:00",
+        "end": "2021-10-04T11:00:00+01:00",
+        "title": "Quarkus & GraalVM",
+        "line2": "dailycleanAPI, a first attempt to develop a Java native API",
+        "authors": "Thomas Guillaume / AXA France",
+        "tags": [
+            "development"
+        ],
+        "target_audience": [
+            "devs"
+        ]
+    },
+    {
+        "header_id": "4",
+        "start": "2021-10-04T11:00:00+01:00",
+        "end": "2021-10-04T11:30:00+01:00",
+        "title": "Java Cloud Native apps",
+        "line2": "Instant Performance boost and Operational cost reduction by around 40%",
+        "authors": "Elvadas Nono & Shaun Smith / Oracle",
+        "tags": [
+            "cloud",
+            "development"
+        ],
+        "target_audience": [
+            "devs"
+        ]
+    },
+    {
+        "header_id": "4",
+        "start": "2021-10-04T11:30:00+01:00",
+        "end": "2021-10-04T12:00:00+01:00",
+        "title": "Engineering Standards",
+        "line2": "Let's create AXA global standards",
+        "authors": "Raimon Ràfols / AXA GO",
+        "tags": [
+            "development"
+        ],
+        "target_audience": [
+            "architects",
+            "managers"
+        ]
+    },
+    {
+        "header_id": "4",
+        "start": "2021-10-04T13:00:00+01:00",
+        "end": "2021-10-04T13:30:00+01:00",
+        "title": "Biotech vs Financial",
+        "line2": "Comparison SLDC/Testing, what to learn & apply?",
+        "authors": "Eric Leforestier / Nanobios",
+        "tags": [
+            "testing"
+        ],
+        "target_audience": [
+            "devs"
+        ]
+    },
+    {
+        "header_id": "4",
+        "start": "2021-10-04T13:30:00+01:00",
+        "end": "2021-10-04T14:00:00+01:00",
+        "title": "Writing better UI Tests",
+        "authors": "Jean lou Pierme & Jonathan Meunier/AXA France",
+        "tags": [
+            "testing"
+        ],
+        "target_audience": [
+            "devs"
+        ]
+    },
+    {
+        "header_id": "4",
+        "start": "2021-10-04T14:00:00+01:00",
+        "end": "2021-10-04T15:00:00+01:00",
+        "title": "Architecture &",
+        "line2": "Engineering",
+        "authors": "Achille Benmussa / AXA GO",
+        "tags": [
+            "development",
+            "architecture"
+        ],
+        "target_audience": [
+            "devs",
+            "architects",
+            "managers"
+        ]
+    },
+    {
+        "header_id": "4",
+        "start": "2021-10-04T15:30:00+01:00",
+        "end": "2021-10-04T16:00:00+01:00",
+        "title": "Blockchain Analytics & ETL",
+        "line2": "AXA Switzerland",
+        "authors": "Francesco Maria de Collibus",
+        "tags": [
+            "development"
+        ],
+        "target_audience": [
+            "devs",
+            "architects"
+        ]
+    },
+    {
+        "header_id": "5",
+        "start": "2021-10-05T09:00:00+01:00",
+        "end": "2021-10-05T09:30:00+01:00",
+        "title": " DevSecOps & ",
+        "line2": "mitigating security vulnerabilities while developing",
+        "authors": "Frederic Giroult/AXA GO - Ronan Pierre/AWS",
+        "tags": [
+            "security",
+            "development"
+        ],
+        "target_audience": [
+            "devs",
+            "managers",
+            "security"
+        ]
+    },
+    {
+        "header_id": "5",
+        "start": "2021-10-05T09:30:00+01:00",
+        "end": "2021-10-05T10:00:00+01:00",
+        "title": " FinOPS ",
+        "line2": "Optimize your daily cost on Azure Platform",
+        "authors": "Julien Hatzig / AXA France",
+        "tags": [
+            "cloud",
+            "development"
+        ],
+        "target_audience": [
+            "devs",
+            "managers"
+        ]
+    },
+    {
+        "header_id": "5",
+        "start": "2021-10-05T10:00:00+01:00",
+        "end": "2021-10-05T10:30:00+01:00",
+        "title": "FLOWE – with a native cloud approach a digital bank commits to Flowe",
+        "authors": "Luca Sanson / Microsoft",
+        "tags": [
+            "cloud",
+            "development"
+        ],
+        "target_audience": [
+            "devs",
+            "architects",
+            "managers"
+        ]
+    },
+    {
+        "header_id": "5",
+        "start": "2021-10-05T10:30:00+01:00",
+        "end": "2021-10-05T11:00:00+01:00",
+        "title": "What is Azure Static Web Apps? A global service is at the heart of event-driven",
+        "authors": "Maxime Villeger / Microsoft",
+        "tags": [
+            "cloud",
+            "development"
+        ],
+        "target_audience": [
+            "devs",
+            "architects",
+            "managers"
+        ]
+    },
+    {
+        "header_id": "5",
+        "start": "2021-10-05T11:00:00+01:00",
+        "end": "2021-10-05T11:30:00+01:00",
+        "title": "Clash containers/serverless",
+        "authors": " Maxime Villeger/Microsoft vs Madou Coulibaly/RedHat Referees: Carlos Navarro, Aldo de Feo, Benjamin Yves Trapp, Daniel Bergentrodt",
+        "tags": [
+            "cloud",
+            "development"
+        ],
+        "target_audience": [
+            "devs",
+            "architects",
+            "managers"
+        ]
+    },
+    {
+        "header_id": "5",
+        "start": "2021-10-05T11:30:00+01:00",
+        "end": "2021-10-05T12:00:00+01:00",
+        "title": "Collaboration between architects & engineers",
+        "authors": "Christian Reitemeier/AXA GO, Jan Weck & Daniel Bergenrodt/AXA DE",
+        "tags": [
+            "cloud",
+            "development"
+        ],
+        "target_audience": [
+            "devs",
+            "architects"
+        ]
+    },
+    {
+        "header_id": "5",
+        "start": "2021-10-05T13:00:00+01:00",
+        "end": "2021-10-05T13:30:00+01:00",
+        "title": "How to do API right & for which benefits? A CIO perspective in Insurance business",
+        "authors": "Antoine Larmanjat / Google",
+        "tags": [
+            "cloud",
+            "development"
+        ],
+        "target_audience": [
+            "devs",
+            "architects"
+        ]
+    },
+    {
+        "header_id": "5",
+        "start": "2021-10-05T13:30:00+01:00",
+        "end": "2021-10-05T14:00:00+01:00",
+        "title": "DAPR: a framework to build event-driven resilient distributed applications",
+        "authors": "Maxime Villege / Microsoft",
+        "tags": [
+            "cloud",
+            "development"
+        ],
+        "target_audience": [
+            "devs",
+            "architects"
+        ]
+    },
+    {
+        "header_id": "5",
+        "start": "2021-10-05T14:00:00+01:00",
+        "end": "2021-10-05T15:00:00+01:00",
+        "title": "The Phoenix project 10 years later",
+        "authors": "Kevin Behr & John Willis / Red Hat",
+        "tags": [
+            "cloud",
+            "development"
+        ],
+        "target_audience": [
+            "devs",
+            "architects",
+            "managers",
+            "security"
+        ]
+    },
+    {
+        "header_id": "5",
+        "start": "2021-10-05T15:00:00+01:00",
+        "end": "2021-10-05T15:30:00+01:00",
+        "title": "Secure infrastructure development using Azure Policy",
+        "authors": "Maciej Porebski, Jayaprakash S, Gopi S, Rishikesh PH / AXA Health",
+        "tags": [
+            "cloud",
+            "development"
+        ],
+        "target_audience": [
+            "devs",
+            "architects",
+            "security"
+        ]
+    },
+    {
+        "header_id": "5",
+        "start": "2021-10-05T15:30:00+01:00",
+        "end": "2021-10-05T1&:00:00+01:00",
+        "title": "Chaos engineering why and how engineer and practice failures",
+        "authors": "Max Richter / AWS",
+        "tags": [
+            "cloud",
+            "development"
+        ],
+        "target_audience": [
+            "devs",
+            "architects",
+            "testing"
+        ]
+    },
+    {
+        "header_id": "6",
+        "start": "2021-10-06T09:00:00+01:00",
+        "end": "2021-10-06T09:30:00+01:00",
+        "title": " DAST ",
+        "authors": "Lyndon Mendoza & Johan Soula / AXA GO",
+        "tags": [
+            "development"
+        ],
+        "target_audience": [
+            "devs",
+            "architects",
+            "security"
+        ]
+    },
+    {
+        "header_id": "6",
+        "start": "2021-10-06T09:30:00+01:00",
+        "end": "2021-10-06T10:30:00+01:00",
+        "title": "Make your team a gift: Get pentested in Production. Without fear, nor pain",
+        "authors": "Jean-Christophe Esnault & Albert Valbuena Pascual / AXA Partners",
+        "tags": [
+            "cloud",
+            "development"
+        ],
+        "target_audience": [
+            "devs",
+            "architects",
+            "managers",
+            "security"
+        ]
+    },
+    {
+        "header_id": "6",
+        "start": "2021-10-06T10:30:00+01:00",
+        "end": "2021-10-06T11:00:00+01:00",
+        "title": " Security Belts Hands-on DevOps Security Maturity Model",
+        "authors": "Lars Hermerschmidt / AXA DE",
+        "tags": [
+            "cloud",
+            "development"
+        ],
+        "target_audience": [
+            "devs",
+            "architects",
+            "managers",
+            "security"
+        ]
+    },
+    {
+        "header_id": "6",
+        "start": "2021-10-06T11:00:00+01:00",
+        "end": "2021-10-06T11:30:00+01:00",
+        "title": "API Security",
+        "authors": "Rémi le Mer / Qualys",
+        "tags": [
+            "development"
+        ],
+        "target_audience": [
+            "devs",
+            "architects",
+            "security"
+        ]
+    },
+    {
+        "header_id": "6",
+        "start": "2021-10-06T11:30:00+01:00",
+        "end": "2021-10-06T12:00:00+01:00",
+        "title": "Challenges of automation of security and making devops developer centric?",
+        "authors": "Daniel Bott/AXA GO, Benjamin Yves Trapp/AXA DE",
+        "tags": [
+            "development"
+        ],
+        "target_audience": [
+            "devs",
+            "architects",
+            "security"
+        ]
+    },
+    {
+        "header_id": "6",
+        "start": "2021-10-06T13:00:00+01:00",
+        "end": "2021-10-06T13:30:00+01:00",
+        "title": "Automatic DAST using AzureDevOps powered by C-Cure",
+        "authors": "Aldo de Feo & Xavier Alvarez / AXA Partners",
+        "tags": [
+            "cloud",
+            "development"
+        ],
+        "target_audience": [
+            "devs",
+            "architects",
+            "security"
+        ]
+    },
+    {
+        "header_id": "6",
+        "start": "2021-10-06T13:30:00+01:00",
+        "end": "2021-10-06T14:00:00+01:00",
+        "title": "AppSec in 2021",
+        "authors": "Shiri Ivtsan / WhiteSource",
+        "tags": [
+            "cloud",
+            "development"
+        ],
+        "target_audience": [
+            "devs",
+            "architects",
+            "managers",
+            "security"
+        ]
+    },
+    {
+        "header_id": "6",
+        "start": "2021-10-06T14:00:00+01:00",
+        "end": "2021-10-06T15:00:00+01:00",
+        "title": "Tech career",
+        "authors": "Anne Bitz/AXA GO, Thomas Courbe,Aude Sophie Archain Avram,Sabrina Kuhn/AXA FR",
+        "tags": [
+            "development"
+        ],
+        "target_audience": [
+            "devs",
+            "architects",
+            "managers",
+            "security"
+        ]
+    },
+    {
+        "header_id": "6",
+        "start": "2021-10-06T15:00:00+01:00",
+        "end": "2021-10-06T15:30:00+01:00",
+        "title": "Shifting left to make security part of your application software delivery lifecycle",
+        "authors": "John Willis & Will Watkins / Red Hat",
+        "tags": [
+            "cloud",
+            "development"
+        ],
+        "target_audience": [
+            "devs",
+            "architects",
+            "security"
+        ]
+    },
+    {
+        "header_id": "6",
+        "start": "2021-10-06T15:30:00+01:00",
+        "end": "2021-10-06T16:00:00+01:00",
+        "title": "Agile Belts in Germany",
+        "authors": "Julia Deike & Dagmar Bott / AXA DE",
+        "tags": [
+            "agile"
+        ],
+        "target_audience": [
+            "devs",
+            "managers"
+        ]
+    },
+    {
+        "header_id": "6",
+        "start": "2021-10-06T16:00:00+01:00",
+        "end": "2021-10-06T17:00:00+01:00",
+        "additional_description": "true",
+        "title": "Women in Tech",
+        "authors": "Stephanie Chiras/Red Hat, Agnes Van de Walle/Microsoft, Silvia Villanueva & Carlene Clifford / AXA",
+        "tags": [
+            "diversity"
+        ],
+        "target_audience": [
+            "devs",
+            "architects",
+            "managers",
+            "security",
+            "testing"
+        ]
+    },
+    {
+        "header_id": "7",
+        "start": "2021-10-07T09:00:00+01:00",
+        "end": "2021-10-07T09:30:00+01:00",
+        "title": "Low code vs Pro code Clash of advocates",
+        "authors": "Johann Bich / AXA LJ vs Elliot Pierret/Microsoft",
+        "tags": [
+            "cloud",
+            "development"
+        ],
+        "target_audience": [
+            "devs",
+            "architects",
+            "managers"
+        ]
+    },
+    {
+        "header_id": "7",
+        "start": "2021-10-07T09:30:00+01:00",
+        "end": "2021-10-07T10:30:00+01:00",
+        "title": "Mainframe Modernization DevOps@Mainframe and AS400",
+        "authors": "Juergen Sautter & Kai Fischer/AXA DE, Yannick Legros, AXA Asia SSC",
+        "tags": [
+            "development"
+        ],
+        "target_audience": [
+            "devs",
+            "architects",
+            "managers"
+        ]
+    },
+    {
+        "header_id": "7",
+        "start": "2021-10-07T10:30:00+01:00",
+        "end": "2021-10-07T11:00:00+01:00",
+        "title": "DHP testing strategy",
+        "authors": "Christian Nguyen/AXA GO, Benoit Sarie/Microsoft",
+        "tags": [
+            "development"
+        ],
+        "target_audience": [
+            "devs",
+            "architects",
+            "managers",
+            "testing"
+        ]
+    },
+    {
+        "header_id": "7",
+        "start": "2021-10-07T11:00:00+01:00",
+        "end": "2021-10-07T11:30:00+01:00",
+        "title": "Towards Diverse Product Development Teams",
+        "authors": "Aïda de Faria/AXA Group, Russel Warman/Auto Trade UK",
+        "tags": [
+            "diversity"
+        ],
+        "target_audience": [
+            "devs",
+            "architects",
+            "managers"
+        ]
+    },
+    {
+        "header_id": "7",
+        "start": "2021-10-07T11:30:00+01:00",
+        "end": "2021-10-07T12:00:00+01:00",
+        "title": "Diverse Product Development Teams",
+        "authors": "Katerina Melanitou / AXA GO",
+        "tags": [
+            "diversity"
+        ],
+        "target_audience": [
+            "devs",
+            "architects",
+            "managers"
+        ]
+    },
+    {
+        "header_id": "7",
+        "start": "2021-10-07T13:00:00+01:00",
+        "end": "2021-10-07T13:30:00+01:00",
+        "title": "The Mayflower autonomous ship across the Atlantic",
+        "authors": "Eric Aquaronne / IBM",
+        "tags": [
+            "cloud",
+            "development",
+            "sustainability"
+        ],
+        "target_audience": [
+            "devs",
+            "architects",
+            "managers"
+        ]
+    },
+    {
+        "header_id": "7",
+        "start": "2021-10-07T13:30:00+01:00",
+        "end": "2021-10-07T14:00:00+01:00",
+        "title": "Accessibility for Developers in Java ",
+        "authors": "Rory Preddy / Microsoft",
+        "tags": [
+            "cloud",
+            "development"
+        ],
+        "target_audience": [
+            "devs"
+        ]
+    },
+    {
+        "header_id": "7",
+        "start": "2021-10-07T14:00:00+01:00",
+        "end": "2021-10-07T14:30:00+01:00",
+        "title": "AI Marketplace for sharing / reusing software assets",
+        "authors": "Emeline Careme & Antoine Vanhaverbeke/AXA GO",
+        "tags": [
+            "cloud",
+            "development"
+        ],
+        "target_audience": [
+            "devs",
+            "architects",
+            "managers"
+        ]
+    },
+    {
+        "header_id": "7",
+        "start": "2021-10-07T14:30:00+01:00",
+        "end": "2021-10-07T15:00:00+01:00",
+        "title": "Digital Sustainability at AXA",
+        "authors": "Charles David Teboul/AXA GO, Lukas Baeges/AXA CH ",
+        "tags": [
+            "sustainability"
+        ],
+        "target_audience": [
+            "devs",
+            "architects",
+            "managers"
+        ]
+    },
+    {
+        "header_id": "7",
+        "start": "2021-10-07T15:00:00+01:00",
+        "end": "2021-10-07T15:30:00+01:00",
+        "title": "Humanizing Technology Recentering Software Development Around People",
+        "authors": "Rachel Alt-Simmons/AXA XL",
+        "tags": [
+            "agile"
+        ],
+        "target_audience": [
+            "devs",
+            "managers"
+        ]
+    },
+    {
+        "header_id": "7",
+        "start": "2021-10-07T15:30:00+01:00",
+        "end": "2021-10-07T16:00:00+01:00",
+        "title": "What the heck are Computable Contracts, and why should I care?",
+        "authors": "Pierre-Loïc Doulcet/AXA GO ",
+        "tags": [
+            "cloud",
+            "development"
+        ],
+        "target_audience": [
+            "devs",
+            "architects",
+            "managers"
+        ]
+    },
+    {
+        "header_id": "8",
+        "start": "2021-10-08T09:00:00+01:00",
+        "end": "2021-10-08T09:30:00+01:00",
+        "title": "Cloud Carbon",
+        "line2": "Reporting Methodology",
+        "authors": "Vincent Poncet / Google",
+        "tags": [
+            "sustainability"
+        ],
+        "target_audience": [
+            "devs",
+            "architects",
+            "managers"
+        ]
+    },
+    {
+        "header_id": "8",
+        "start": "2021-10-08T09:30:00+01:00",
+        "end": "2021-10-08T10:00:00+01:00",
+        "title": "Quality Engineering",
+        "line2": "& the OPEN road",
+        "authors": "Anisha Narang / Red Hat",
+        "tags": [
+            "development"
+        ],
+        "target_audience": [
+            "devs",
+            "architects",
+            "testing"
+        ]
+    },
+    {
+        "header_id": "8",
+        "start": "2021-10-08T10:00:00+01:00",
+        "end": "2021-10-08T10:30:00+01:00",
+        "title": "Power of Open Source Inner Source and Communities of Practice",
+        "authors": "Will Watkins / Red Hat",
+        "tags": [
+            "development"
+        ],
+        "target_audience": [
+            "devs",
+            "architects",
+            "managers"
+        ]
+    },
+    {
+        "header_id": "8",
+        "start": "2021-10-08T10:30:00+01:00",
+        "end": "2021-10-08T11:00:00+01:00",
+        "title": "GitHub Today at AXA",
+        "authors": "Alain Helaili/GitHub, Sandrine Holesch & Carlos Navarro/AXA GO",
+        "tags": [
+            "cloud",
+            "development"
+        ],
+        "target_audience": [
+            "devs",
+            "architects"
+        ]
+    },
+    {
+        "header_id": "8",
+        "start": "2021-10-08T11:00:00+01:00",
+        "end": "2021-10-08T11:30:00+01:00",
+        "title": "InnerSource Lessons a tale of sharing",
+        "authors": "Francisco Manuel Herrero Perez/AXA GO",
+        "tags": [
+            "development"
+        ],
+        "target_audience": [
+            "devs",
+            "architects"
+        ]
+    },
+    {
+        "header_id": "8",
+        "start": "2021-10-08T11:30:00+01:00",
+        "end": "2021-10-08T12:00:00+01:00",
+        "title": "Quantum computing Open Discussion",
+        "authors": "Mitra Sabyasachi/AXA XL, Jean-Michel Torres/IBM",
+        "tags": [
+            "cloud",
+            "development"
+        ],
+        "target_audience": [
+            "devs",
+            "architects"
+        ]
+    },
+    {
+        "header_id": "8",
+        "start": "2021-10-08T13:00:00+01:00",
+        "end": "2021-10-08T13:30:00+01:00",
+        "title": "Machine Learning accessible to anyone and not just for Data Scientists",
+        "authors": "Vincent Poncet / Google",
+        "tags": [
+            "cloud",
+            "development"
+        ],
+        "target_audience": [
+            "devs",
+            "architects",
+            "managers"
+        ]
+    },
+    {
+        "header_id": "8",
+        "start": "2021-10-08T13:30:00+01:00",
+        "end": "2021-10-08T14:00:00+01:00",
+        "title": "Resilience by Design",
+        "authors": "Aurelien Vanhoucke & Gregory Limoratto/AXA France",
+        "tags": [
+            "cloud",
+            "development"
+        ],
+        "target_audience": [
+            "devs",
+            "architects",
+            "managers",
+            "testing"
+        ]
+    },
+    {
+        "header_id": "8",
+        "start": "2021-10-08T14:00:00+01:00",
+        "end": "2021-10-08T14:30:00+01:00",
+        "title": "Introduction to 'computer vision' with OpenCV",
+        "authors": "Guillaume Chervet / AXA France",
+        "tags": [
+            "development"
+        ],
+        "target_audience": [
+            "devs"
+        ]
+    },
+    {
+        "header_id": "8",
+        "start": "2021-10-08T14:30:00+01:00",
+        "end": "2021-10-08T15:00:00+01:00",
+        "title": "Engineering Summit Closing",
+        "authors": "David Graça, Raimon Ràfols/AXA GO",
+        "tags": [
+            "development"
+        ],
+        "target_audience": [
+            "devs",
+            "architects",
+            "managers"
+        ]
+    },
+    {
+        "header_id": "8",
+        "start": "2021-10-08T15:00:00+01:00",
+        "end": "2021-10-08T16:00:00+01:00",
+        "title": "Teaching an Elephant to Dance (& Fly) Internal evolution across teams, processes, and applications",
+        "authors": "Burr Sutter / Red Hat",
+        "tags": [
+            "cloud",
+            "development"
+        ],
+        "target_audience": [
+            "managers"
+        ]
+    }
+]
