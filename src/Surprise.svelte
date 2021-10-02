@@ -1,10 +1,10 @@
 <script>
   export let allData;
-  let  date, start, end;
+  let  date, start, end, abstract;
 
   $: {
     if (allData) {
-      
+      abstract = allData.other.abstract,
       date = allData.start.toLocaleDateString();
       start = allData.start.toLocaleTimeString();
       end = allData.end.toLocaleTimeString();
@@ -326,7 +326,7 @@
   let cal = ics();
   cal.addEvent(
     allData.title,
-    allData.abstract ? allData.abstract : "",
+    allData.other.link ? allData.other.link : "",
     allData.other.authors,
     allData.start,
     allData.end
@@ -357,8 +357,8 @@
   <div class="row">
     <div class="col">
       <p>
-        {#if allData.abstract != undefined}
-          <p>{allData.abstract}</p>
+        {#if allData.other.link != undefined}
+          <a href={allData.other.link}>Join here!</a>
         {/if}
       </p>
     </div>

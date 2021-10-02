@@ -27,7 +27,7 @@
 		initialDate: "2021-10-04",
 		validRange: {
 			start: "2021-10-04",
-			end: "2021-10-15",
+			end: "2021-10-09",
 		},
 		events: function (info, successCallback, failureCallback) {
 			console.log(info);
