@@ -150,7 +150,6 @@
         "line2": "mitigating security vulnerabilities while developing",
         "authors": "Frederic Giroult/AXA GO - Ronan Pierre/AWS",
         "tags": [
-            "security",
             "development"
         ],
         "target_audience": [
