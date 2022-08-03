@@ -23,6 +23,10 @@ jobs:
   sec-review:
     runs-on: ubuntu-latest
     steps:
+      - name: 'Checkout Repository'
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
       - name: TruffleHog OSS
         uses: trufflesecurity/trufflehog@v3.4.3
         with:
