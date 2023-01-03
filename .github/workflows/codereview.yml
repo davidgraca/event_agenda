@@ -14,16 +14,16 @@ jobs:
   check-iac:
     runs-on: ${{ fromJSON('["ubuntu-latest", "self-hosted"]')[github.repository == 'github/docs-internal'] }}
     steps:
+# Checkout
     - name: Checkout
       uses: actions/checkout@v3
 # KICS IAC scan
     - name: run kics Scan
       uses: checkmarx/kics-github-action@v1.6
       with:
-        path: 'terraform'
         output_formats: json
-        ignore_on_exit: results
         output_path: myResults/
+        
     - name: Archive KICS results
       uses: actions/upload-artifact@v3
       with:
@@ -36,14 +36,22 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-        with:
+        with: 
           fetch-depth: 0
+      
       - name: TruffleHog OSS
         uses: trufflesecurity/trufflehog@main
+        id: get_secret_scan
         with:
           base: ${{ github.event.repository.default_branch }}
           head: HEAD
-          extra_args: --debug --only-verified --json >> trufflehogresults.json
+          extra_args: --debug --only-verified --json 
+          output: ' '
+      
+      - name: Insight of results
+        run: |
+          echo "${{ steps.get_secret_scan.outputs.json }}" > trufflehogresults.txt
+      
       - name: Archive Trufflehog results
         uses: actions/upload-artifact@v3
         with:
