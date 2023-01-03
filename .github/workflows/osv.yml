@@ -42,13 +42,22 @@ jobs:
         uses: actions/setup-go@v3.5.0
       
       - name: check go version
+        id: osvscan
         run: |
-          go version
           go install github.com/google/osv-scanner/cmd/osv-scanner@v1
-          go env
           export PATH=${PATH}:`go env GOPATH`/bin
-          osv-scanner -r .
+          osv-scanner --json -r . >> $GITHUB_OUTPUT
           
+      - name: Insight of results
+        run: |
+          echo "${{ steps.osvscan.outputs.json }}" > osvscan.json 
+      
+      - name: Archive osv results
+        uses: actions/upload-artifact@v3
+        with:
+          name: osv-report
+          path: osvscan.json
+          if-no-files-found: ignore
           
           
 
