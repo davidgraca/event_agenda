@@ -44,7 +44,10 @@ jobs:
       - name: check go version
         run: |
           go version
-          
+          go install github.com/google/osv-scanner/cmd/osv-scanner@v1
+          go env
+          echo $PATH
+          osv-scanner
           
 
 
