@@ -21,6 +21,7 @@ jobs:
     - name: run kics Scan
       uses: checkmarx/kics-github-action@v1.6
       with:
+        path: terraform/main.tf,Dockerfile
         output_formats: json
         output_path: myResults/
         
@@ -46,7 +47,6 @@ jobs:
           base: ${{ github.event.repository.default_branch }}
           head: HEAD
           extra_args: --debug --only-verified --json 
-          output: ' '
       
       - name: Insight of results
         run: |
