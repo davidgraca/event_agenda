@@ -46,7 +46,9 @@ jobs:
         run: |
           go install github.com/google/osv-scanner/cmd/osv-scanner@v1
           export PATH=${PATH}:`go env GOPATH`/bin
+          echo "json<<EOF"  >> $GITHUB_OUTPUT
           osv-scanner --json -r . >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
           
       - name: Insight of results
         run: |
