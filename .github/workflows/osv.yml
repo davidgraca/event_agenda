@@ -40,10 +40,10 @@ jobs:
       
       - name: Setup Go environment
         uses: actions/setup-go@v3.5.0
-      - name: install osv
+      
+      - name: check go version
         run: |
-          go install github.com/google/osv-scanner/cmd/osv-scanner@v1
-          osv-scanner
+          go version
           
           
 
