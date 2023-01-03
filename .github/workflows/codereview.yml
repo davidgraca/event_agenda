@@ -45,6 +45,7 @@ jobs:
         id: get_secret_scan
         with:
           base: ${{ github.event.repository.default_branch }}
+          path: ./
           head: HEAD
           extra_args: --debug --only-verified --json 
       
