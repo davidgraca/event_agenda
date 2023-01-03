@@ -18,4 +18,7 @@ jobs:
 
       - name: Check dependencies for security vulnerabilities
         uses: g-rath/check-with-osv-detector@main
+        with:
+          flags:
+            --ignore
 
