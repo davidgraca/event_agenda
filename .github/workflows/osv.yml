@@ -1,10 +1,22 @@
+name: 'OSV'
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# This allows a subsequently queued workflow run to interrupt previous runs
+concurrency:
+  group: '${{ github.workflow }} @ ${{ github.event.pull_request.head.label || github.head_ref || github.ref }}'
+  cancel-in-progress: true
+
+jobs:
   sca-scan:
     name: sca osv scanner google
     runs-on: ubuntu-latest
     steps:
-      - name: Setup Go environment
-        uses: actions/setup-go@v3.5.0
-      - name: gets the osv scanner repo
+      - name: gets sources
         uses: actions/checkout@v3.2.0
-        with:
-          repository: google/osv-scanner
+      - name: gets osv
+        uses: google/osv-scanner@latest
+
