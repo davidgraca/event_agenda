@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: write-all
 
 # This allows a subsequently queued workflow run to interrupt previous runs
 concurrency:
@@ -23,6 +23,20 @@ jobs:
         path: 'terraform'
         ignore_on_exit: results
         output_path: myResults/
-    - name: display kics results
-      run: |
-        cat myResults/results.json
+        
+        
+  check-secrets:
+    runs-on: ${{ fromJSON('["ubuntu-latest", "self-hosted"]')[github.repository == 'github/docs-internal'] }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: TruffleHog OSS
+        uses: trufflesecurity/trufflehog@main
+        with:
+          path: ./
+          base: ${{ github.event.repository.default_branch }}
+          head: HEAD
+          extra_args: --debug --only-verified
+
