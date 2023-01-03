@@ -40,7 +40,9 @@ jobs:
       - name: install osv
         run: |
           go install github.com/google/osv-scanner/cmd/osv-scanner@v1
-          
+      
+      - uses: actions/checkout@v3
+      
       - name: run scan
         run: |
           osv-scanner -r .
