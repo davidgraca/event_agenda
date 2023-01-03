@@ -20,7 +20,18 @@ jobs:
         id: osvcheck
         with:
           flags: -json
-          
+      
+      - name: Insight of results
+        run: |
+          echo "${{ steps.osvcheck.outputs.json }}" > osv.json
+      
+      - name: Archive osv results
+        uses: actions/upload-artifact@v3
+        with:
+          name: osv-report
+          path: osv.json
+          if-no-files-found: ignore
+  
   osv-scan:
     runs-on: ubuntu-latest
     steps:
@@ -28,6 +39,11 @@ jobs:
         uses: actions/setup-go@v3.5.0
       - name: install osv
         run: |
-    
+          go install github.com/google/osv-scanner/cmd/osv-scanner@v1
+          
+      - name: run scan
+        run: |
+          osv-scanner -r .
+          
 
 
