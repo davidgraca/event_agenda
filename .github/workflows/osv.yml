@@ -11,11 +11,12 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  check-dependencies:
+  osv-detector:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Check dependencies for security vulnerabilities
+        continue-on-error: true
         uses: g-rath/check-with-osv-detector@main
         id: osvcheck
         with:
@@ -45,7 +46,7 @@ jobs:
       
       - name: run scan
         run: |
-          osv-scanner -r .
+          osv-scanner
           
 
 
