@@ -46,8 +46,7 @@ jobs:
         run: |
           go install github.com/google/osv-scanner/cmd/osv-scanner@v1
           export PATH=${PATH}:`go env GOPATH`/bin
-          JSON = '$(osv-scanner --json -r .)' 
-          echo $JSON  > osvscan.json 
+          echo '$(osv-scanner --json -r .)'   > osvscan.json 
 
       
       - name: Archive osv results
