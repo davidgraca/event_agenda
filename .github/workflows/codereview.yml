@@ -21,9 +21,15 @@ jobs:
       uses: checkmarx/kics-github-action@v1.6
       with:
         path: 'terraform'
+        output_formats: json
         ignore_on_exit: results
         output_path: myResults/
-        
+    - name: Archive KICS results
+      uses: actions/upload-artifact@v3
+      with:
+        name: kics-report
+        path:  myResults/results.json
+        if-no-files-found: ignore
         
   check-secrets:
     runs-on: ${{ fromJSON('["ubuntu-latest", "self-hosted"]')[github.repository == 'github/docs-internal'] }}
@@ -37,5 +43,11 @@ jobs:
         with:
           base: ${{ github.event.repository.default_branch }}
           head: HEAD
-          extra_args: --debug --only-verified --json > results.json
+          extra_args: --debug --only-verified --json >> trufflehogresults.json
+      - name: Archive Trufflehog results
+        uses: actions/upload-artifact@v3
+        with:
+          name: trufflehog-report
+          path: trufflehogresults.json
+          if-no-files-found: ignore
 
