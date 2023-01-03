@@ -46,15 +46,19 @@ jobs:
         run: |
           go install github.com/google/osv-scanner/cmd/osv-scanner@v1
           export PATH=${PATH}:`go env GOPATH`/bin
-          echo '$(osv-scanner --json -r .)'   > osvscan.json 
+          echo $(osv-scanner --json -r .) > osvscan.json 
 
       
       - name: Archive osv results
         uses: actions/upload-artifact@v3
         with:
-          name: osv-report
+          name: osv-scan
           path: osvscan.json
           if-no-files-found: ignore
+          
+      - name: summary
+        run: |
+          echo cat osvscan.json >> $GITHUB_STEP_SUMMARY
           
           
 
