@@ -57,7 +57,7 @@ jobs:
       
       - name: Insight of results
         run: |
-          echo ${{ steps.get_secret_scan.outputs.* }} 
+          echo ${{ steps.get_secret_scan.outputs[0] }} 
           echo ${{ steps.get_secret_scan.outputs.* }} > trufflehogresults.txt
       
       - name: Archive Trufflehog results
@@ -78,6 +78,13 @@ jobs:
         - uses: gitleaks/gitleaks-action@v2
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            
+        - name: Archive Trufflehog results
+          uses: actions/upload-artifact@v3
+          with:
+            name: gitleaks-report
+            path: results.sarif
+            if-no-files-found: ignore
             
 #SCA Vulnerabilty scaneer OSV scanner       
   osv-scan:
