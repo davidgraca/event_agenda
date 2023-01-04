@@ -11,13 +11,18 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+
+# KICS IAC scan
   check-iac:
     runs-on: ${{ fromJSON('["ubuntu-latest", "self-hosted"]')[github.repository == 'github/docs-internal'] }}
     steps:
+
 # Checkout
     - name: Checkout
       uses: actions/checkout@v3
-# KICS IAC scan
+      with:
+        repository: ${{ github.repository }}
+        
     - name: run kics Scan
       uses: checkmarx/kics-github-action@v1.6
       with:
@@ -31,7 +36,8 @@ jobs:
         name: kics-report
         path:  myResults/results.json
         if-no-files-found: ignore
-        
+
+# secret discovery trufflehog        
   check-secrets:
     runs-on: ${{ fromJSON('["ubuntu-latest", "self-hosted"]')[github.repository == 'github/docs-internal'] }}
     steps:
@@ -51,7 +57,7 @@ jobs:
       
       - name: Insight of results
         run: |
-          echo "${{ steps.get_secret_scan.outputs.json }}" > trufflehogresults.txt
+          echo ${{ steps.get_secret_scan.outputs.* }} > trufflehogresults.txt
       
       - name: Archive Trufflehog results
         uses: actions/upload-artifact@v3
@@ -60,6 +66,7 @@ jobs:
           path: trufflehogresults.json
           if-no-files-found: ignore
 
+#secret discovery
   gitleaks-scan:
       name: gitleaks
       runs-on: ubuntu-latest
@@ -70,4 +77,31 @@ jobs:
         - uses: gitleaks/gitleaks-action@v2
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            
+#SCA Vulnerabilty scaneer OSV scanner       
+  osv-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Go environment
+        uses: actions/setup-go@v3.5.0
+      
+      - name: check go version
+        id: osvscan
+        run: |
+          go install github.com/google/osv-scanner/cmd/osv-scanner@v1
+          export PATH=${PATH}:`go env GOPATH`/bin
+          echo $(osv-scanner --json -r .) > osvscan.json 
+      
+      - name: Archive osv results
+        uses: actions/upload-artifact@v3
+        with:
+          name: osv-scan
+          path: osvscan.json
+          if-no-files-found: ignore
+          
+      - name: summary
+        run: |
+          echo -e $(cat osvscan.json) >> $GITHUB_STEP_SUMMARY
 
