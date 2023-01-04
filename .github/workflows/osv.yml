@@ -11,28 +11,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  osv-detector:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Check dependencies for security vulnerabilities
-        continue-on-error: true
-        uses: g-rath/check-with-osv-detector@main
-        id: osvcheck
-        with:
-          flags: -json
-      
-      - name: Insight of results
-        run: |
-          echo "${{ steps.osvcheck.outputs.json }}" > osv.json
-      
-      - name: Archive osv results
-        uses: actions/upload-artifact@v3
-        with:
-          name: osv-report
-          path: osv.json
-          if-no-files-found: ignore
-  
+
   osv-scan:
     runs-on: ubuntu-latest
     steps:
