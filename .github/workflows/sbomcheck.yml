@@ -32,7 +32,8 @@ jobs:
         id: scan
         with:
           sbom: "${{ github.event.repository.name }}-sbom.spdx.json"
-          fail-build: false
+          fail-build: "false"
+          severity-cutoff: none
           
       - name: upload Anchore scan SARIF report
         uses: github/codeql-action/upload-sarif@v2
