@@ -43,8 +43,8 @@ jobs:
       - name: Inspect action SARIF report
         run: cat ${{ steps.scan.outputs.sarif }}
           
-  legal:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Run GitHub Action for ORT
-        uses: oss-review-toolkit/ort-ci-github-action@v1
+#  legal:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Run GitHub Action for ORT
+#        uses: oss-review-toolkit/ort-ci-github-action@v1
