@@ -1,0 +1,33 @@
+name: 'SBOM Check'
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# This allows a subsequently queued workflow run to interrupt previous runs
+concurrency:
+  group: '${{ github.workflow }} @ ${{ github.event.pull_request.head.label || github.head_ref || github.ref }}'
+  cancel-in-progress: true
+
+jobs:
+  sbom:
+    runs-on: ubuntu-latest
+    steps:
+    
+    # Checkout
+      - name: Checkout
+        uses: actions/checkout@v3
+    
+    # Create SBOM
+      - name: Anchore SBOM Action
+        uses: anchore/sbom-action@v0.13.1
+        with:
+          format: spdx-json
+          output-file: "${{ github.event.repository.name }}-sbom.spdx.json"
+    
+    # Scan SBOM
+      - name: Anchore Container Scan
+        uses: anchore/scan-action@v3.3.2
+        with:
+          sbom: "${{ github.event.repository.name }}-sbom.spdx.json"
