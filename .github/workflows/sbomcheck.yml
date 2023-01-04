@@ -31,3 +31,9 @@ jobs:
         uses: anchore/scan-action@v3.3.2
         with:
           sbom: "${{ github.event.repository.name }}-sbom.spdx.json"
+          
+  legal:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run GitHub Action for ORT
+        uses: oss-review-toolkit/ort-ci-github-action@v1
