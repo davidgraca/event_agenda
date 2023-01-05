@@ -45,21 +45,53 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Run Trivy vulnerability scanner in repo mode
+      - name: Run Trivy vulnerability
         uses: aquasecurity/trivy-action@master
         with:
           scan-type: 'fs'
           ignore-unfixed: true
-          format: 'sarif'
-          security-checks: 'vuln,secret,config'
-          output: 'trivy-results.sarif'
+          format: 'cyclonedx'
+          security-checks: 'vuln'
+          output: 'trivy-results.cdx.json'
           severity: 'CRITICAL,HIGH'
-
+    
       - name: Archive Trivy results
         uses: actions/upload-artifact@v3
         with:
           name: trivy-results
-          path: trivy-results.sarif
+          path: trivy-results.cdx.json
+          if-no-files-found: ignore
+
+      - name: Run Trivy secret
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'fs'
+          ignore-unfixed: true
+          format: 'json'
+          security-checks: 'secret'
+          output: 'trivy-secrets.json'
+      
+      - name: Archive Trivy results
+        uses: actions/upload-artifact@v3
+        with:
+          name: trivy-results
+          path: trivy-secrets.json
+          if-no-files-found: ignore
+          
+      - name: Run Trivy config
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'fs'
+          ignore-unfixed: true
+          format: 'json'
+          security-checks: 'config'
+          output: 'trivy-config.json'
+      
+      - name: Archive Trivy results
+        uses: actions/upload-artifact@v3
+        with:
+          name: trivy-config
+          path: trivy-config.json
           if-no-files-found: ignore
 
 # secret discovery trufflehog        
@@ -75,9 +107,6 @@ jobs:
         uses: trufflesecurity/trufflehog@main
         id: get_secret_scan
         with:
-          base: ${{ github.event.repository.default_branch }}
-          path: ./
-          head: HEAD
           extra_args: --debug --only-verified --json 
       
       - name: Insight of results
