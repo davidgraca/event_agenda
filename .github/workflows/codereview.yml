@@ -107,7 +107,7 @@ jobs:
         uses: trufflesecurity/trufflehog@main
         id: get_secret_scan
         with:
-          extra_args: --debug --only-verified --json 
+          extra_args: --debug --only-verified --json --since-commit 0
       
       - name: Insight of results
         run: |
