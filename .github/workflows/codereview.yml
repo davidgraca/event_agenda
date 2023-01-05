@@ -39,7 +39,7 @@ jobs:
 
 # trivy scan IaC and secrets
   trivy:
-    name: Build
+    name: Trivy vuln,secret,config
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout code
@@ -51,6 +51,7 @@ jobs:
           scan-type: 'fs'
           ignore-unfixed: true
           format: 'sarif'
+          security-checks: 'vuln,secret,config'
           output: 'trivy-results.sarif'
           severity: 'CRITICAL,HIGH'
 
