@@ -13,29 +13,53 @@ concurrency:
 jobs:
 
 # KICS IAC scan
-  check-iac:
+  kics:
     runs-on: ubuntu-latest
     steps:
 
 # Checkout
-    - name: Checkout
-      uses: actions/checkout@v3
-      with:
-        repository: ${{ github.repository }}
-        
-    - name: run kics Scan
-      uses: checkmarx/kics-github-action@v1.6
-      with:
-        path: terraform/main.tf,Dockerfile
-        output_formats: json
-        output_path: myResults/
-        
-    - name: Archive KICS results
-      uses: actions/upload-artifact@v3
-      with:
-        name: kics-report
-        path:  myResults/results.json
-        if-no-files-found: ignore
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          repository: ${{ github.repository }}
+
+      - name: run kics Scan
+        uses: checkmarx/kics-github-action@v1.6
+        with:
+          path: terraform/main.tf,Dockerfile
+          output_formats: json
+          output_path: myResults/
+
+      - name: Archive KICS results
+        uses: actions/upload-artifact@v3
+        with:
+          name: kics-report
+          path:  myResults/results.json
+          if-no-files-found: ignore
+
+# trivy scan IaC and secrets
+  trivy:
+    name: Build
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run Trivy vulnerability scanner in repo mode
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'fs'
+          ignore-unfixed: true
+          format: 'sarif'
+          output: 'trivy-results.sarif'
+          severity: 'CRITICAL,HIGH'
+
+      - name: Archive Trivy results
+        uses: actions/upload-artifact@v3
+        with:
+          name: trivy-results
+          path: trivy-results.sarif
+          if-no-files-found: ignore
 
 # secret discovery trufflehog        
   check-secrets:
